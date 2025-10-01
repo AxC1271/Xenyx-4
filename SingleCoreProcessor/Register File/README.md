@@ -1,6 +1,6 @@
 # Register File
 
-Welcome to the Register File module of the Xenyx-4 processor project. This component allows for the storage and access of data during CPU operations. Below, you'll find an overview of the register file's functionality, development process, and theoretical background. This is a modified version of the original RISC-V processor register file but with additinoal naming conventions.
+Welcome to the Register File module of the Xenyx-4 processor project. This component allows for the storage and access of data during CPU operations. Below, you'll find an overview of the register file's functionality, development process, and theoretical background. This is a modified version of the original RISC-V processor register file in Verilog but with additional naming conventions.
 
 ## 🧠 Overview
 The register file is a key element in the CPU architecture, consisting of 32 registers, each 32 bits wide. It serves as a fast-access storage area for the CPU, allowing efficient data manipulation and retrieval during instruction execution.
