@@ -20,7 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 // 32 registers, 32 bits each
-// x0 is hardwired to 0
+// x0 = 0 (zero)
+// x1 = return address (ra)
+// x2 = stack pointer (sp)
+// x3 = global pointer (gp)
+// x4 = thread pointer (tp)
+// x5-x7 = temp (t0-t2)
+// x8 = saved reg/frame pointer (s0 / fp)
+// x9 = saved reg (s1)
+// x10-x11 = func arguments/return values (a0-a1)
+// x12-x17 = func arguments (a2-a7)
+// x18-x27 = saved regs (s2-s11)
+// x28-x31 = temporaries (t3-t6)
+
 module reg_file (
     input  wire        clk,
     input  wire        rst,
