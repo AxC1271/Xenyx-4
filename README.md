@@ -1,3 +1,2 @@
 # Xenyx-4 Multi-Core Processor
-This is an extension of the RISC-V Processor project, with branch predictor circuits, data hazard managements, and explores cache coherence protocols 
-in an MIMD architecture. 
+This is an extension of the RISC-V Processor project which aims to explores cache coherence protocols in an MIMD architecture. 
