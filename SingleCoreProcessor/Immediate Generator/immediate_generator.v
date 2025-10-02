@@ -21,7 +21,31 @@
 
 module immediate_generator (
   input  wire[31:0]  instruction,
-  output wire[31:0]  immediate
+  output reg[31:0]  immediate
 );
+
+  // define switch case for every scenario
+  always @(*) begin
+    case instruction[6:0]
+      0010011: // I-type
+        immediate <= instruction[31:20];  
+      0100011: // S-type
+        immediate <= {instruction[31:25]; instruction_reg[11:7]}; 
+      1100011: // B-type
+        immediate <= {instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
+
+      // two different types of U-type instructions
+      0110111: // Load Upper Immediate
+        immediate <= instruction[31:12];
+      0010111: // Add Upper Immediate to PC
+        immediate <= instruction[31:12];
+
+      // two different types of J-type instructions
+      1101111: // jalr
+        immediate <= instruction[31:20];
+      1111111: // jal
+        immediate <= {instruction[31], instruction[19:12], instruction[20], instruction[30:21], 1'b0};
+    endcase
+  end
 
 endmodule
