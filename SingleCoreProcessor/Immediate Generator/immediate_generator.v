@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module immediate_generator (
-  input  [31:0]  instruction,
-  output [31:0]  immediate
+  input  wire[31:0]  instruction,
+  output wire[31:0]  immediate
 );
 
 endmodule
